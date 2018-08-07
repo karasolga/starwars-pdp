@@ -1,5 +1,7 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
+process.env.BABEL_ENV = 'development';
+process.env.NODE_ENV = 'development';
 
 module.exports = {
 		entry: './src/index.js',
