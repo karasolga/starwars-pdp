@@ -1,0 +1,15 @@
+{
+  "name": "webpack-react-pdp",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Olga Karaseva",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack --mode development --open",
+    "build": "webpack --mode production"
+  },
+  "devDependencies": {
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  }
+}
