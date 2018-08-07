@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 const App = () => {
 		return (
 				<div>
-					<p>React is here with Olga</p>
+					<p>React is here</p>
 				</div>
 		)
 }
