@@ -2,25 +2,13 @@ import React from 'react'
 
 class Input extends React.Component {
 
-  state = {
-    value: ''
-  }
-
   render() {
-    const {value} = this.state
+    const { value, onChange } = this.props
     return (
-      <input value={value} onChange={this.onChange}/>
+      <input value={value} onChange={onChange}/>
     )
   }
 
-  onChange = (evt) => {
-    console.log('evt', evt.target.value)
-    this.setState({
-      value: evt.target.value
-    })
-
-
-  }
 }
 
 export default Input
