@@ -37,6 +37,7 @@
       "error",
       "never"
     ],
+    "object-curly-spacing": ["error", "always"],
     "react/jsx-uses-vars": 2,
     "lines-between-class-members": 2,
     "react/no-deprecated": 2
