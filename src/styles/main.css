@@ -1,3 +1,23 @@
+@font-face {
+    font-family: 'Star Jedi';
+    src: url('../assets/fonts/StarJedi.woff2') format('woff2'),
+    url('../assets/fonts/StarJedi.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Star Jedi Hollow';
+    src: url('../assets/fonts/StarJediHollow.eot');
+    src: url('../assets/fonts/StarJediHollow.eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/StarJediHollow.woff2') format('woff2'),
+    url('../assets/fonts/StarJediHollow.woff') format('woff'),
+    url('../assets/fonts/StarJediHollow.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 .title {
-    color: red
+    color: red;
+    font-family: 'Star Jedi Hollow', 'Helvetica Neue';
 }
