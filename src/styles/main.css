@@ -45,3 +45,15 @@ body {
     color: white;
     margin: 10px 0;
 }
+
+
+.card__list {
+    padding: 0;
+}
+.card__item {
+   list-style: none;
+}
+.card__item span:first-child {
+    margin-right: 10px;
+    color: #ffb500;
+}
