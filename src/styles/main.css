@@ -16,8 +16,32 @@
     font-style: normal;
 }
 
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Star Jedi', 'Helvetica Neue';
+}
 
 .title {
-    color: red;
+    color: #ffb500;
     font-family: 'Star Jedi Hollow', 'Helvetica Neue';
+}
+
+.input {
+    border: 2px solid #ffb500;
+    height: 45px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 20px;
+    box-sizing: border-box;
+    padding: 5px 10px;
+}
+
+.card {
+    flex: 1;
+    border: 1px solid #ffb500;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    margin: 10px 0;
 }
