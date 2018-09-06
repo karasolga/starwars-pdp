@@ -12,28 +12,41 @@ export default class Dashboard extends React.Component {
 
   render() {
     const { value, results } = this.state
-    console.log('RESULTS', results)
-    const items = results.results ? results.results : []
+    const items = results
     return (
       <div>
         <Input value={value} onChange={this.getValue}/>
         <p>The value is {this.state.value}</p>
 
-        {items.length > 0 && items.map((item, idx) => <Card item={item} key={idx} />)}
+        {items.length > 0 && items[0].map((item, idx) => <Card item={item} key={idx} />)}
       </div>
 
     )
   }
 
   getValue = (evt) => {
-    console.log('value', evt.target.value)
 
     this.setState({
       value: evt.target.value
     })
 
-    fetch(`https://swapi.co/api/people/?search=${evt.target.value}`)
-      .then(response => response.json())
-      .then(json => this.setState({ results: json }))
+    fetchResults(evt.target.value).then(results => this.setState({ results }))
+
   }
+
+}
+
+
+async function fetchResults (text) {
+  let results = []
+
+  try {
+    let response = await fetch(`https://swapi.co/api/people/?search=${text}`)
+    let data = await response.json()
+    results = [...results, data.results]
+    return results
+  } catch (err) {
+    console.log('ERROR!!!', err)
+  }
+
 }
