@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Popup from './popup'
+import IconPeople from './icon-people'
 
 class Card extends Component {
 
@@ -14,6 +15,7 @@ class Card extends Component {
     return (
       <div className="card">
         <div onClick={this.onClick}>{item.name}</div>
+        <IconPeople/>
         {isExpand && this.renderDetails()}
         {isPopupActive && <Popup item={item} onClose={this.onClose}/> }
       </div>

@@ -17,7 +17,7 @@
 }
 
 body {
-    background-color: #2b2726;
+    background-color: #000000c7;
     color: #fff;
     font-family: 'Star Jedi', 'Helvetica Neue';
 }
@@ -39,6 +39,7 @@ body {
 
 .card {
     flex: 1;
+    position: relative;
     border: 1px solid #ffb500;
     border-radius: 5px;
     padding: 5px 10px;
@@ -47,7 +48,12 @@ body {
     background-color: rgba(8, 7, 7, 0.21);
 }
 
-
+.card__icon {
+    width: 29px;
+    position: absolute;
+    right: 10px;
+    top: 3px;
+}
 .card__list {
     padding: 0;
     flex: 1
