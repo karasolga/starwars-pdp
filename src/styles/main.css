@@ -44,11 +44,13 @@ body {
     padding: 5px 10px;
     color: white;
     margin: 10px 0;
+    background-color: rgba(8, 7, 7, 0.21);
 }
 
 
 .card__list {
     padding: 0;
+    flex: 1
 }
 .card__item {
    list-style: none;
@@ -56,4 +58,60 @@ body {
 .card__item span:first-child {
     margin-right: 10px;
     color: #ffb500;
+}
+.card__link {
+    align-self: center;
+}
+.card__details {
+    display: flex;
+    flex-direction: row;
+
+}
+.popup__container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(6, 4, 4, 0.51);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup {
+    max-width: 500px;
+    min-width: 300px;
+    width: 100%;
+    position: relative;
+    background-color: black;
+    box-shadow: 0 0 6px #e0a004d9;
+    border-radius: 5px;
+}
+.popup__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.popup__content {
+    padding: 50px 20px;
+}
+
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.row__label {
+    color: #ffb500;
+    width: 150px;
+    margin-right: 20px;
+}
+
+.row__value {
+
 }
