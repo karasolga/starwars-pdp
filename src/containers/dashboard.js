@@ -5,20 +5,18 @@ import Card from '../components/card'
 export default class Dashboard extends React.Component {
   state = {
     value: '',
-    results: []
+    people: [],
+    planets: []
   }
 
-
-
   render() {
-    const { value, results } = this.state
-    const items = results
+    const { value, people } = this.state
     return (
       <div>
         <Input value={value} onChange={this.getValue}/>
         <p>The value is {this.state.value}</p>
 
-        {items.length > 0 && items[0].map((item, idx) => <Card item={item} key={idx} />)}
+        {people.length > 0 && people[0].map((item, idx) => <Card item={item} key={idx} type="people"/>)}
       </div>
 
     )
@@ -30,18 +28,19 @@ export default class Dashboard extends React.Component {
       value: evt.target.value
     })
 
-    fetchResults(evt.target.value).then(results => this.setState({ results }))
+    fetchData(evt.target.value, 'people').then(people => this.setState({ people }))
+    fetchData(evt.target.value, 'planets').then(planets => this.setState({ planets }))
 
   }
 
 }
 
 
-async function fetchResults (text) {
+async function fetchData (text, type) {
   let results = []
 
   try {
-    let response = await fetch(`https://swapi.co/api/people/?search=${text}`)
+    let response = await fetch(`https://swapi.co/api/${type}/?search=${text}`)
     let data = await response.json()
     results = [...results, data.results]
     return results
