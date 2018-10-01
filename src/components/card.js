@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import Popup from './popup'
 import IconPeople from './icon-people'
+import IconPlanet from './icon-planet'
+import IconStarship from './icon-starship'
+import { PeopleDetailsPreview } from './details/people-details-preview'
+import { PlanetsDetailsPreview } from './details/planets-details-preview'
+import { StarshipsDetailsPreview } from './details/starships-details-preview'
 
 class Card extends Component {
 
@@ -10,14 +15,14 @@ class Card extends Component {
   }
 
   render() {
-    const { item } = this.props
+    const { item, type } = this.props
     const { isExpand, isPopupActive } = this.state
     return (
       <div className="card">
         <div onClick={this.onClick}>{item.name}</div>
-        <IconPeople/>
+        {this.renderIcon()}
         {isExpand && this.renderDetails()}
-        {isPopupActive && <Popup item={item} onClose={this.onClose}/> }
+        {isPopupActive && <Popup item={item} onClose={this.onClose} type={type} /> }
       </div>
     )
   }
@@ -41,28 +46,31 @@ class Card extends Component {
 
   }
 
-  renderDetails = () => {
-    const { item } = this.props
+  renderIcon = () => {
+    const { type } = this.props
 
-    return (
-      <div className="card__details">
-        <ul className="card__list">
-          <li className="card__item">
-            <span>Gender</span>
-            <span>{item.gender}</span>
-          </li>
-          <li className="card__item">
-            <span>Height</span>
-            <span>{item.height}</span>
-          </li>
-          <li className="card__item">
-            <span>Weight</span>
-            <span>{item.mass}</span>
-          </li>
-        </ul>
-        <div className="card__link" onClick={this.onShowMore}>show more</div>
-      </div>
-    )
+    switch (type) {
+      case 'people':
+        return <IconPeople/>
+      case 'planets':
+        return <IconPlanet/>
+      case 'starships':
+        return <IconStarship/>
+
+    }
+  }
+
+  renderDetails = () => {
+    const { item, type } = this.props
+    switch (type) {
+      case 'people':
+        return <PeopleDetailsPreview item={item} onClick={this.onShowMore}/>
+      case 'planets':
+        return <PlanetsDetailsPreview item={item} onClick={this.onShowMore}/>
+      case 'starships':
+        return <StarshipsDetailsPreview item={item} onClick={this.onShowMore}/>
+
+    }
   }
 
 }

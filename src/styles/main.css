@@ -35,12 +35,19 @@ body {
     font-size: 20px;
     box-sizing: border-box;
     padding: 5px 10px;
+    background: #000;
+    color: #fff;
+    font-family: 'Star Jedi', 'Helvetica Neue';
+}
+.input:focus {
+    outline: #feb400 double 5px;
+    outline-offset: -2px;
 }
 
 .card {
     flex: 1;
     position: relative;
-    border: 1px solid #ffb500;
+    border: 1px solid hsla(43, 100%, 31%, 1);
     border-radius: 5px;
     padding: 5px 10px;
     color: white;
@@ -102,9 +109,13 @@ body {
     right: 15px;
     cursor: pointer;
 }
+.popup__title {
+    padding: 15px;
+    font-size: 20px;
+}
 
 .popup__content {
-    padding: 50px 20px;
+    padding: 30px 20px 50px 20px;
 }
 
 
@@ -120,5 +131,5 @@ body {
 }
 
 .row__value {
-
+    flex: 1;
 }
