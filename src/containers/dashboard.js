@@ -15,8 +15,7 @@ export default class Dashboard extends React.Component {
     const { value, people, planets, starships } = this.state
     return (
       <div>
-        <Input value={value} onChange={this.getValue}/>
-        <p>The value is {this.state.value}</p>
+        <Input value={value} placeholder="Search in people, planets, starships" onChange={this.getValue}/>
 
         {people.map((item, idx) => <Card item={item} key={idx} type="people"/>)}
         {planets.map((item, idx) => <Card item={item} key={idx} type="planets"/>)}

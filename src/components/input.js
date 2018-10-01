@@ -3,9 +3,9 @@ import React from 'react'
 class Input extends React.Component {
 
   render() {
-    const { value, onChange } = this.props
+    const { value, placeholder, onChange } = this.props
     return (
-      <input className="input" value={value} onChange={onChange}/>
+      <input className="input" value={value} placeholder={placeholder} onChange={onChange}/>
     )
   }
 
