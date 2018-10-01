@@ -1,6 +1,7 @@
 import React from 'react'
 import Input from '../components/input'
 import Card from '../components/card'
+import { fetchData } from '../api'
 
 export default class Dashboard extends React.Component {
   state = {
@@ -31,21 +32,6 @@ export default class Dashboard extends React.Component {
     fetchData(evt.target.value, 'people').then(people => this.setState({ people }))
     fetchData(evt.target.value, 'planets').then(planets => this.setState({ planets }))
 
-  }
-
-}
-
-
-async function fetchData (text, type) {
-  let results = []
-
-  try {
-    let response = await fetch(`https://swapi.co/api/${type}/?search=${text}`)
-    let data = await response.json()
-    results = [...results, data.results]
-    return results
-  } catch (err) {
-    console.log('ERROR!!!', err)
   }
 
 }
