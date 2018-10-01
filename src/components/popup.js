@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 import RowDetails from './row-details'
-import IconPeople from './icon-people'
-import IconPlanet from './icon-planet'
-import IconStarship from './icon-starship'
 
 class Popup extends Component {
   render () {
