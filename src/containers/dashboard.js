@@ -7,17 +7,20 @@ export default class Dashboard extends React.Component {
   state = {
     value: '',
     people: [],
-    planets: []
+    planets: [],
+    starships: []
   }
 
   render() {
-    const { value, people } = this.state
+    const { value, people, planets, starships } = this.state
     return (
       <div>
         <Input value={value} onChange={this.getValue}/>
         <p>The value is {this.state.value}</p>
 
-        {people.length > 0 && people[0].map((item, idx) => <Card item={item} key={idx} type="people"/>)}
+        {people.map((item, idx) => <Card item={item} key={idx} type="people"/>)}
+        {planets.map((item, idx) => <Card item={item} key={idx} type="planets"/>)}
+        {starships.map((item, idx) => <Card item={item} key={idx} type="starships"/>)}
       </div>
 
     )
@@ -31,6 +34,7 @@ export default class Dashboard extends React.Component {
 
     fetchData(evt.target.value, 'people').then(people => this.setState({ people }))
     fetchData(evt.target.value, 'planets').then(planets => this.setState({ planets }))
+    fetchData(evt.target.value, 'starships').then(starships => this.setState({ starships }))
 
   }
 
