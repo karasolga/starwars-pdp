@@ -20,6 +20,7 @@ body {
     background-color: #000000c7;
     color: #fff;
     font-family: 'Star Jedi', 'Helvetica Neue';
+    text-transform: lowercase;
 }
 
 .title {
